@@ -1,37 +1,55 @@
-# TO-DO: Complete the selection_sort() function below 
+# TO-DO: Complete the selection_sort() function below
+
 def selection_sort( arr ):
     # loop through n-1 elements
+    # n -1 because after the sort, the one remaining is the largest
     for i in range(0, len(arr) - 1):
+        print(arr)
         cur_index = i
         smallest_index = cur_index
         
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc) 
         # use first number in list and 
-        #loop over right side starting with the next index      
-        for next_smallest in range(cur_index+1, len(arr)):
+        #loop over right side starting with the next index 
+             
+        for next_smallest in range(cur_index, len(arr)):
+            
         # is next smallest less than right side of arr--smallest index
+            
             if arr[next_smallest] < arr[smallest_index]:
+                
         # make new index equal to smallest index
-                smallest_index =  next_smallest           
-        # TO-DO: swap a,b = b,a
+        
+                smallest_index =  next_smallest
+                           
+        # TO-DO: swap a,b = b,a 
+        
         arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
 
     return arr #make sure you are returning in the proper place
 
-
 # TO-DO:  implement the Bubble Sort function below O(n^2)
 
 def bubble_sort( arr ):
-    for pair in range(len(arr)): #should be using a while loop?--while True:
+    #make a flag to show if swaps occurred
+    #for pair in range(len(arr)): #should be using a while loop?--while True:
+    swaps = True
+    while swaps:
     #loop through elements n-1    
+        swaps = False
         for i in range(len(arr) - 1): 
+            
             pair = i
+    
     #compare elements if arr[i] is greater move to the right    
+            
             if arr[pair] > arr[pair + 1]:
+                
     #swap them a,b = b,a
-               arr[pair], arr[pair + 1] = arr[pair + 1], arr[pair]
                
+               arr[pair], arr[pair + 1] = arr[pair + 1], arr[pair]
+               swaps = True
     return arr
 
 #INSERTION SORTING
