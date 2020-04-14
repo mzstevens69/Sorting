@@ -10,9 +10,9 @@ def selection_sort( arr ):
         # use first number in list and 
         #loop over right side starting with the next index      
         for next_smallest in range(cur_index+1, len(arr)):
-         # is next_smallest < than right side of arr--smallest_index
+        # is next smallest less than right side of arr--smallest index
             if arr[next_smallest] < arr[smallest_index]:
-        # make new index equal to 
+        # make new index equal to smallest index
                 smallest_index =  next_smallest           
         # TO-DO: swap a,b = b,a
         arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
